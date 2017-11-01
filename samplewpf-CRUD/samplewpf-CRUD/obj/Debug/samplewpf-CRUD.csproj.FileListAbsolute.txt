@@ -1,0 +1,17 @@
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\obj\Debug\MainWindow.baml
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\obj\Debug\MainWindow.g.cs
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\obj\Debug\App.g.cs
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\obj\Debug\samplewpf-CRUD_MarkupCompile.cache
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\obj\Debug\samplewpf-CRUD.g.resources
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\obj\Debug\samplewpf_CRUD.Properties.Resources.resources
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\obj\Debug\samplewpf-CRUD.csproj.GenerateResource.Cache
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\bin\Debug\samplewpf-CRUD.exe.config
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\bin\Debug\samplewpf-CRUD.exe
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\bin\Debug\samplewpf-CRUD.pdb
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\bin\Debug\EntityFramework.dll
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\bin\Debug\EntityFramework.xml
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\obj\Debug\samplewpf-CRUD.exe
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\obj\Debug\samplewpf-CRUD.pdb
+C:\Users\admin\Documents\GitHub\VStudioNet\PryWPF\samplewpf-CRUD\samplewpf-CRUD\obj\Debug\samplewpf-CRUD.csprojResolveAssemblyReference.cache
