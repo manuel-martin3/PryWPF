@@ -22,11 +22,8 @@ namespace samplewpf_CRUD
     public partial class MainWindow : Window
     {
 
-        public class item
-        {
-            public string user { get; set; }
-            public string pass { get; set; }            
-        }
+        public bool sw= false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -35,7 +32,7 @@ namespace samplewpf_CRUD
         sampleDBEntities db = new sampleDBEntities();
         tlogin tbl = new tlogin();
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btn_save_Click(object sender, RoutedEventArgs e)
         {
             string msg;
 
@@ -49,6 +46,7 @@ namespace samplewpf_CRUD
                 tbl.password = txt_password.Password;
                 db.tlogins.Add(tbl);
                 db.SaveChanges();
+                cargar();
                 msg = "Data ha sido guardado.";
             }
 
@@ -78,24 +76,26 @@ namespace samplewpf_CRUD
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
+        {            
             btn_search.IsEnabled = false;
             txt_id.IsEnabled = false;
+            cargar();           
+        }
 
+        void cargar() {
             var data = from x in db.tlogins select x;
-            if (data.ToList().Count>0)
+            if (data.ToList().Count > 0)
             {
                 DGrid.ItemsSource = data.ToList();
             }
             else
             {
                 MessageBox.Show("¡No se encontraron datos...!");
-            }
-            
+            } 
         }
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
+        {           
             btn_search.IsEnabled = true;
             txt_id.IsEnabled = true;
             DGrid.ItemsSource = null;
@@ -105,21 +105,23 @@ namespace samplewpf_CRUD
         private void btn_search_Click(object sender, RoutedEventArgs e)
         {
 
-            //int id = int.Parse(txt_id.Text);
-            //bool flag = db.tlogins.Where(x => x.id == id).Any();            
-            //if (flag)            
-            //{
+            #region MyRegion
+                //int id = int.Parse(txt_id.Text);
+                //bool flag = db.tlogins.Where(x => x.id == id).Any();            
+                //if (flag)            
+                //{
                 
-            //    tbl = db.tlogins.Where(x => x.id== id).First();
-            //    txt_username.Text = tbl.username;
-            //    txt_password.Password = tbl.password;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("¡ID no valida, intenta de nuevo...!");
-            //}
-
-
+                //    tbl = db.tlogins.Where(x => x.id== id).First();
+                //    txt_username.Text = tbl.username;
+                //    txt_password.Password = tbl.password;
+                //}
+                //else
+                //{
+                //    MessageBox.Show("¡ID no valida, intenta de nuevo...!");
+                //}
+           
+            #endregion
+            
             int id = int.Parse(txt_id.Text);            
             var data = from x in db.tlogins where x.id == id  select x;
             if (data.ToList().Count > 0)
@@ -133,21 +135,59 @@ namespace samplewpf_CRUD
             }
         }
 
-        private void DGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void DGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ////if (DGrid.SelectedItem == null) return;
-            
-            ////System.Data.DataRowView dv = DGrid.SelectedItem as System.Data.DataRowView;
-            ////txt_username.Text = dv.Row[1].ToString();
-            ////txt_password.Password = dv.Row[2].ToString();
+           
+            if (DGrid.Items.Count>0)
+            {
+                object item1 = DGrid.SelectedItem;
+                var id_ = (DGrid.SelectedCells[0].Column.GetCellContent(item1) as TextBlock).Text;
+                var user_ = (DGrid.SelectedCells[1].Column.GetCellContent(item1) as TextBlock).Text;
+                var pass_ = (DGrid.SelectedCells[2].Column.GetCellContent(item1) as TextBlock).Text;
 
-            //if (DGrid.SelectedItem == null)
-            //    return;
-            //System.Data.DataTable dt = DGrid.SelectedItem as System.Data.DataTable;
-            ////System.Data.DataRow dr1 = dr.Row;
-
-            ////txtName.Text = Convert.ToString(dr1.ItemArray[1]);     
+                txt_id.Text = id_;
+                txt_username.Text = user_;
+                txt_password.Password = pass_;               
+            }            
         }
 
+        private void btn_update_Click(object sender, RoutedEventArgs e)
+        {
+            int id = int.Parse(txt_id.Text);
+            bool flag = db.tlogins.Where(x => x.id == id).Any();
+
+            if (flag)
+            {
+                tbl = db.tlogins.Where(x => x.id == id).First();
+                tbl.username = txt_username.Text;
+                tbl.password = txt_password.Password;
+                db.SaveChanges();                
+                cargar();
+                MessageBox.Show("¡Datos actualizados ...!");
+            }
+            else
+            {
+                MessageBox.Show("¡ID no valido, Intente de nuevo ...!");
+            }
+        }
+
+        private void btn_delete_Click(object sender, RoutedEventArgs e)
+        {
+            int id = int.Parse(txt_id.Text);
+            bool flag = db.tlogins.Where(x=>x.id==id).Any();
+
+            if (flag)
+            {
+                tbl = db.tlogins.Where(x => x.id == id).First();
+                db.tlogins.Remove(tbl);
+                db.SaveChanges();
+                //cargar();
+                MessageBox.Show("¡Datos fueron eliminados...!");
+            }
+            else
+            {
+                MessageBox.Show("¡ID no valido, Intente de nuevo ...!");
+            }            
+        }
     }
 }

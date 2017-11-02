@@ -3,18 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="900">
     <Grid>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="207,237,0,0" VerticalAlignment="Top" Width="129" Click="Button_Click" Height="40" FontSize="20"/>
-        <TextBox x:Name="txt_username" HorizontalAlignment="Left" Height="37" Margin="184,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontSize="20"/>
-        <PasswordBox x:Name="txt_password" HorizontalAlignment="Left" Margin="184,166,0,0" VerticalAlignment="Top" Width="155" FontSize="20"/>
+        <Button Name="btn_save" Content="Submit" HorizontalAlignment="Left" Margin="184,220,0,0" VerticalAlignment="Top" Width="100" Click="btn_save_Click" Height="25"/>
+        <TextBox x:Name="txt_username" HorizontalAlignment="Left" Height="23" Margin="184,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+        <PasswordBox x:Name="txt_password" HorizontalAlignment="Left" Margin="184,166,0,0" VerticalAlignment="Top" Width="155" Height="23"/>
         <Label Content="Username" HorizontalAlignment="Left" Margin="69,117,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="75,159,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button x:Name="btn_login" Content="Login" HorizontalAlignment="Left" Margin="53,237,0,0" VerticalAlignment="Top" Width="129" Height="40" FontSize="20" Click="btn_login_Click"/>
-        <TextBox x:Name="txt_id" HorizontalAlignment="Left" Height="37" Margin="633,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="btn_login" Content="Login" HorizontalAlignment="Left" Margin="75,220,0,0" VerticalAlignment="Top" Width="100" Height="25" Click="btn_login_Click"/>
+        <TextBox x:Name="txt_id" HorizontalAlignment="Left" Height="23" Margin="633,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" FontWeight="Bold"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="599,23,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button x:Name="btn_search" Content="Buscar" HorizontalAlignment="Left" Margin="741,22,0,0" VerticalAlignment="Top" Width="129" Height="40" FontSize="20" Click="btn_search_Click" />
-        <DataGrid Name="DGrid" MouseDoubleClick="DGrid_MouseDoubleClick" HorizontalAlignment="Left" Margin="415,67,0,0" VerticalAlignment="Top" Height="235" Width="455" FontSize="18" />
+        <Button x:Name="btn_search" Content="Buscar" HorizontalAlignment="Left" Margin="741,30,0,0" VerticalAlignment="Top" Width="129" Height="25" Click="btn_search_Click" />
+        <DataGrid Name="DGrid" SelectionChanged="DGrid_SelectionChanged" HorizontalAlignment="Left" Margin="415,67,0,0" VerticalAlignment="Top" Height="242" Width="455" />
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="330" Margin="386,0,0,-11" Stroke="Black" VerticalAlignment="Top" Width="2"/>
         <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Mostrar Data" HorizontalAlignment="Left" Margin="415,40,0,0" VerticalAlignment="Top" FontSize="15" Height="22" RenderTransformOrigin="0.5,0.5" FontWeight="Bold"/>
         <Label Content="My Login" HorizontalAlignment="Left" Margin="101,10,0,0" VerticalAlignment="Top" FontSize="50"/>
+        <Button Name="btn_update" Content="UpDate" HorizontalAlignment="Left" Margin="75,250,0,0" VerticalAlignment="Top" Width="100" Height="25" Click="btn_update_Click"/>
+        <Button x:Name="btn_delete" Content="Delete" HorizontalAlignment="Left" Margin="184,250,0,0" VerticalAlignment="Top" Width="100" Height="25" Click="btn_delete_Click"/>
     </Grid>
 </Window>
